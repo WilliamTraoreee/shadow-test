@@ -1,0 +1,207 @@
+// RESET
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+q {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box;
+}
+
+
+// CLEAR
+
+.clear {
+  clear: both;
+}
+
+// COLOR
+
+$white : #fff;
+$black : #000;
+$blue : #2196F3;
+$red : #F44336;
+$green : #B7CA68;
+$title : #4E4E4E;
+$text : #666666;
+$label : #999999;
+$placeholder : rgba(0,0,0,.26);
+$header : #1C1C1C;
+$info : #C89CA8;
+
+// GRADIENT
+
+@mixin gradient {
+  background: rgb(51,51,51);
+  background: -moz-linear-gradient(left, rgba(51,51,51,1) 95%, rgba(28,28,28,1) 100%);
+  background: -webkit-linear-gradient(left, rgba(51,51,51,1) 95%,rgba(28,28,28,1) 100%);
+  background: linear-gradient(to right, rgba(51,51,51,1) 95%,rgba(28,28,28,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#1c1c1c',GradientType=1 );
+}
+
+// FONTS
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
+// BODY
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto';
+}
+
+// TITLE + TEXT
+
+h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: $title;
+  margin-bottom: 20px;
+}
+
+p {
+  font-weight: 400px;
+  font-size: 16px;
+  color: $text;
+  line-height: 20px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+// CONTAINER
+
+.container {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: .4s;
+}
+
+// HEADER
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: $header;
+  z-index: 990;
+
+  .menu-icon {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: $white;
+    font-size: 20px;
+    cursor: pointer;
+
+    i {
+      transition: .4s;
+    }
+  }
+
+  .title {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 60px;
+    color: $white;
+    font-size: 14px;
+  }
+
+  .info {
+    display: inline-block;
+    vertical-align: top;
+    width: 60px;
+    height: 60px;
+    float: right;
+    text-align: center;
+    line-height: 60px;
+    color: $info;
+    font-size: 20px;
+  }
+}
+
+// NAVIGATION
+
+nav {
+  position: fixed;
+  width: 300px;
+  height: calc( 100% - 60px );
+  top: 60px;
+  left: -300px;
+  @include gradient;
+  transition: .4s;
+  z-index: 995;
+}
+
+.navopen {
+
+  .menu-icon {
+    i {
+      transform: rotate(90deg);
+    }
+  }
+
+  nav {
+    left: 0;
+  }
+
+  .container {
+    margin-left: 300px;
+  }
+}
+
+// CONTENT
+
+.content {
+  width: 1024px;
+  margin: 60px auto 0 auto;
+  padding: 110px 20px 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}

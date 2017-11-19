@@ -1,0 +1,61 @@
+@media screen and (max-width: 1024px) {
+
+  //CONTENT
+  .content {
+    width: 800px;
+  }
+  //BLOC
+  .bloc {
+    height: 200px;
+    &.leaf {
+      width: 200px;
+    }
+    &.request {
+      width: 490px!important;
+    }
+    &.form {
+      width: 490px!important;
+      input[type="tel"] {
+        width: calc( 66% - 30px )!important;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+
+  //CONTENT
+  .content {
+    width: 100%;
+    padding: 20px;
+  }
+  //BLOC
+  .bloc {
+    height: auto!important;
+    margin-bottom: 20px;
+    &.leaf {
+      width: 100%!important;
+      margin-right: 0!important;
+      order: 3!important;
+    }
+    &.request {
+      width: 100%!important;
+      order: 1!important;
+    }
+    &.form {
+      width: 100%!important;
+      order: 2!important;
+      label {
+        display: none;
+      }
+      input[type="text"], input[type="email"], input[type="tel"], select, .tel {
+        width: 100%;
+      }
+      input[type="tel"] {
+        width: calc( 66% - 30px )!important;
+      }
+    }
+  }
+
+}
