@@ -110,12 +110,25 @@ p {
   width: 100%;
   height: auto;
   min-height: 100%;
+  transition: .4s;
+}
+
+.background {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  transition: .4s;
+  position: fixed;
+  z-index: -1;
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  transition: .4s;
+
+  &.blur {
+    filter: blur(20px);
+  }
 }
 
 // HEADER

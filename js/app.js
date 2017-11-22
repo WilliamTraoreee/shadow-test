@@ -8,10 +8,12 @@ $(".menu-icon").click( function() {
 
 $(".request .accept").click( function() {
   $(".form").fadeIn();
+  $(".background").addClass("blur");
 });
 
 $(".closeform").click( function() {
   $(".form").fadeOut();
+  $(".background").removeClass("blur");
 });
 
 var $form = $("form"),
